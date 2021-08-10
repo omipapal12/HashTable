@@ -2,23 +2,27 @@ package com.bridgelabz;
 
 public class HashTable {
     public static void main(String[] args) {
-        HashTableMain hashmain = new HashTableMain();
-        String message = "To be or not to be";
+        HashTableMain<String, Integer> hashMain = new HashTableMain();
+        String message = "“Paranoids are not\n" +
+                "paranoid because they are paranoid but\n" +
+                "because they keep putting themselves\n" +
+                "deliberately into paranoid avoidable\n" +
+                "situations”";
+
         //String to String[] conversion.
         String[] messageArray = message.toLowerCase().split(" ");
+
         //Iterate within the array
         for(String word: messageArray) {
-            //Search for the word in the linked list
-            Integer value =  hashmain.get(word);
+            Integer value =  hashMain.get(word);
             if( value == null)
                 value = 1;
             else
                 value = value + 1;
-            hashmain.add(word , value);
+            hashMain.add(word , value);
         }
         //Display the linked list
-        System.out.println(hashmain);
+        System.out.println(hashMain);
     }
-
 
 }
